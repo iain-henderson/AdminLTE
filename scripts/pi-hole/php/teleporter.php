@@ -582,7 +582,7 @@ if (isset($_POST['action'])) {
             exit($e->getMessage()."\n");
         }
     } else {
-        exit('archive "'.$argv[1].'" does not exist'."\n"); 
+        exit('archive "'.$argv[1].'" does not exist'."\n");
     }
 } else {
     $hostname = gethostname() ? str_replace('.', '_', gethostname()).'-' : '';
