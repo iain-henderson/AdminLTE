@@ -300,7 +300,7 @@ function archive_add_directory($path, $subdir = '')
     }
 }
 
-function load_teleport_archive($filename, $flushtables = true, $blacklist = true, $whitelist = true, $regex_whitelist = true, $regexlist = true, $auditlog = true, $adlist = true, $group = true, $client = true, $staticdhcpleases = true, $localdnsrecords = true, $localcnamerecords = true)
+function load_teleport_archive($filename, $flushtables = true, $blacklist = true, $whitelist = true, $regex_whitelist = true, $regexlist = true, $regex_whitelist = true, $auditlog = true, $adlist = true, $group = true, $client = true, $staticdhcpleases = true, $localdnsrecords = true, $localcnamerecords = true)
 {
     $importedsomething = false;
     $fullpiholerestart = false;
@@ -561,8 +561,8 @@ if (isset($_POST['action'])) {
         }
 
         $reloadsettingspage = load_teleport_archive($fullfilename, isset($_POST['flushtables']), isset($_POST['blacklist']), isset($_POST['whitelist']),
-                                                    isset($_POST['regex_whitelist']), isset($_POST['regexlist']), isset($_POST['auditlog']),
-                                                    isset($_POST['adlist']), isset($_POST['group']), isset($_POST['client']),
+                                                    isset($_POST['regex_blacklist']), isset($_POST['regex_whitelist']), isset($_POST['regexlist']),
+                                                    isset($_POST['auditlog']), isset($_POST['adlist']), isset($_POST['group']), isset($_POST['client']),
                                                     isset($_POST['staticdhcpleases']), isset($_POST['localdnsrecords']), isset($_POST['localcnamerecords']));
 
         unlink($fullfilename);
