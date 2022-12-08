@@ -560,9 +560,9 @@ if (isset($_POST['action'])) {
             exit('Failed moving '.htmlentities($source).' to '.htmlentities($fullfilename));
         }
 
-        $reloadsettingspage = load_teleport_archive($fullfilename, isset($_POST['flushtables']), isset($_POST['blacklist']), isset($_POST['whitelist']), 
-                                                    isset($_POST['regex_whitelist']), isset($_POST['regexlist']), isset($_POST['auditlog']), 
-                                                    isset($_POST['adlist']), isset($_POST['group']), isset($_POST['client']), 
+        $reloadsettingspage = load_teleport_archive($fullfilename, isset($_POST['flushtables']), isset($_POST['blacklist']), isset($_POST['whitelist']),
+                                                    isset($_POST['regex_whitelist']), isset($_POST['regexlist']), isset($_POST['auditlog']),
+                                                    isset($_POST['adlist']), isset($_POST['group']), isset($_POST['client']),
                                                     isset($_POST['staticdhcpleases']), isset($_POST['localdnsrecords']), isset($_POST['localcnamerecords']));
 
         unlink($fullfilename);
@@ -577,7 +577,7 @@ if (isset($_POST['action'])) {
     // this leaves room for more complicated execution, if such a thing is necessary
     if (file_exists($argv[1])) {
         try {
-             load_teleport_archive($argv[1]);  // cli restores everything
+            load_teleport_archive($argv[1]);  // cli restores everything
         } catch (PharException $e) {
             exit($e->getMessage()."\n");
         }
